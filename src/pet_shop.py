@@ -34,11 +34,17 @@ def get_pets_by_breed(given_dict, given_breed):
             pets_of_given_breed.append(pet)
     return pets_of_given_breed
 
-# 
+# for each item in "pets" list, compare "name" with "given_name" and if equal, return the dict for that pet.
 def find_pet_by_name(given_dict, given_name):
-    pets_of_given_name = []
+    # pets_of_given_name = []
     for pet in given_dict["pets"]:
         if pet["name"] == given_name:
             return pet
     #         pets_of_given_name.append(pet)
     # return pets_of_given_name
+
+# for each item in "pets" list, compare "name" with "given_name" and if equal, remove the dict for that pet.
+def remove_pet_by_name(given_dict, given_name):
+    for pet in given_dict["pets"]:
+        if pet["name"] == given_name:
+            given_dict["pets"].remove(pet)
