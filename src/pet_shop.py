@@ -11,3 +11,7 @@ def get_total_cash(given_dict):
 # value of cash will be added to total_cash. 
 def add_or_remove_cash(given_dict, cash):
     given_dict["admin"]["total_cash"] += cash
+
+# given a dict, this will return the value within "admin" dict at "pets_sold"
+def get_pets_sold(given_dict):
+    return given_dict["admin"]["pets_sold"]
