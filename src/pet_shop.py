@@ -48,3 +48,8 @@ def remove_pet_by_name(given_dict, given_name):
     for pet in given_dict["pets"]:
         if pet["name"] == given_name:
             given_dict["pets"].remove(pet)
+
+#  in "pets" list in "given_dict", add "new_pet_entry" to end of list.
+def add_pet_to_stock(given_dict, new_pet_entry):
+    given_dict["pets"].append(new_pet_entry)
+    
