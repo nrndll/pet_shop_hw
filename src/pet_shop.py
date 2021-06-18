@@ -33,3 +33,12 @@ def get_pets_by_breed(given_dict, given_breed):
     #         total_pets_by_breed += 1
             pets_of_given_breed.append(pet)
     return pets_of_given_breed
+
+# 
+def find_pet_by_name(given_dict, given_name):
+    pets_of_given_name = []
+    for pet in given_dict["pets"]:
+        if pet["name"] == given_name:
+            return pet
+    #         pets_of_given_name.append(pet)
+    # return pets_of_given_name
