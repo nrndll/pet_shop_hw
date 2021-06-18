@@ -19,3 +19,7 @@ def get_pets_sold(given_dict):
 # update "pets_sold" by value of "number_of_pets_sold" parameter
 def increase_pets_sold(given_dict, number_of_pets_sold):
     given_dict["admin"]["pets_sold"] += number_of_pets_sold
+
+# get number of items from the "pets" list, i.e. the total stock of the petshop.
+def get_stock_count(given_dict):
+    return len(given_dict["pets"])
