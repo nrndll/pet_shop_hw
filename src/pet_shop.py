@@ -69,3 +69,10 @@ def get_customer_pet_count(customer_index):
 def add_pet_to_customer(customer_index, pet_to_add):
     customer_index["pets"].append(pet_to_add)
 
+# compares the value of "cash" at given index position parameter with "price" value of new_pet parameter. If customer "cash" is greater than or equal to new_pet "price" then evaluate to True, otherwise False.
+def customer_can_afford_pet(customer_index, new_pet):
+    can_afford_pet = False
+    if customer_index["cash"] >= new_pet["price"]:
+        can_afford_pet = True
+    return can_afford_pet
+
