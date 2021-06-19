@@ -64,3 +64,8 @@ def remove_customer_cash(customer_index, cash):
 # takes index position and returns the length of the value in the "pets" key which should be a list.
 def get_customer_pet_count(customer_index):
     return len(customer_index["pets"])
+
+# takes 2 parameters, index position of a list and an object to add to a list. Appends the given object to the list at the "pets" key of the dictionary at the given index position which is a list.
+def add_pet_to_customer(customer_index, pet_to_add):
+    customer_index["pets"].append(pet_to_add)
+
