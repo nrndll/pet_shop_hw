@@ -58,5 +58,9 @@ def get_customer_cash(customer_index):
     return customer_index["cash"]
 
 # takes 2 parameters, index position of a list and an int, then updates value at "cash" key for item at given index position. 
-def remove_customer_cash(customer, cash):
-    customer["cash"] -= cash
+def remove_customer_cash(customer_index, cash):
+    customer_index["cash"] -= cash
+
+# takes index position and returns the length of the value in the "pets" key which should be a list.
+def get_customer_pet_count(customer_index):
+    return len(customer_index["pets"])
