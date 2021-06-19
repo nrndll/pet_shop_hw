@@ -56,3 +56,7 @@ def add_pet_to_stock(given_dict, new_pet_entry):
 # takes index position of a list as parameter and returns value from the "cash" key for that item.
 def get_customer_cash(customer_index):
     return customer_index["cash"]
+
+# takes 2 parameters, index position of a list and an int, then updates value at "cash" key for item at given index position. 
+def remove_customer_cash(customer, cash):
+    customer["cash"] -= cash
