@@ -76,3 +76,13 @@ def customer_can_afford_pet(customer_index, new_pet):
         can_afford_pet = True
     return can_afford_pet
 
+# this will first check customer can afford the pet, if true then a series od functions runs to add the pet to dict in customers list, update total no. of pets sold in admin dict of petshop dict, subtract cash from dict in customers list and finally update the total cash in the admin dict. Only one pet can be sold at a time using this function as defined by pets_sold variable.
+def sell_pet_to_customer(given_dict, pet, customer):
+    pets_sold = 1
+    if customer_can_afford_pet(customer, pet):
+        add_pet_to_customer(customer, pet)
+        remove_pet_by_name(given_dict, pet["name"])
+        increase_pets_sold(given_dict, pets_sold)
+        remove_customer_cash(customer, pet["price"])
+        add_or_remove_cash(given_dict, pet["price"])
+
