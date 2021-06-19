@@ -53,3 +53,6 @@ def remove_pet_by_name(given_dict, given_name):
 def add_pet_to_stock(given_dict, new_pet_entry):
     given_dict["pets"].append(new_pet_entry)
     
+# takes index position of a list as parameter and returns value from the "cash" key for that item.
+def get_customer_cash(customer_index):
+    return customer_index["cash"]
