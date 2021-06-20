@@ -1,4 +1,5 @@
 # WRITE YOUR FUNCTIONS HERE
+import pdb 
 
 # given a dict, this will return the value at "name"
 def get_pet_shop_name(given_dict):
@@ -71,18 +72,30 @@ def add_pet_to_customer(customer_index, pet_to_add):
 
 # compares the value of "cash" at given index position parameter with "price" value of new_pet parameter. If customer "cash" is greater than or equal to new_pet "price" then evaluate to True, otherwise False.
 def customer_can_afford_pet(customer_index, new_pet):
-    can_afford_pet = False
+    # can_afford_pet = False
     if customer_index["cash"] >= new_pet["price"]:
         can_afford_pet = True
+    else:
+        can_afford_pet = False
     return can_afford_pet
 
-# this will first check customer can afford the pet, if true then a series od functions runs to add the pet to dict in customers list, update total no. of pets sold in admin dict of petshop dict, subtract cash from dict in customers list and finally update the total cash in the admin dict. Only one pet can be sold at a time using this function as defined by pets_sold variable.
+# this will first check customer can afford the pet, if true then a series of functions runs to add the pet to dict in customers list, update total no. of pets sold in admin dict of petshop dict, subtract cash from dict in customers list and finally update the total cash in the admin dict. Only one pet can be sold at a time using this function as defined by pets_sold variable.
 def sell_pet_to_customer(given_dict, pet, customer):
     pets_sold = 1
-    if customer_can_afford_pet(customer, pet):
-        add_pet_to_customer(customer, pet)
-        remove_pet_by_name(given_dict, pet["name"])
-        increase_pets_sold(given_dict, pets_sold)
-        remove_customer_cash(customer, pet["price"])
-        add_or_remove_cash(given_dict, pet["price"])
 
+    # if find_pet_by_name(given_dict, pet): 
+    is_pet_in_stock = False
+    for pets_stock in given_dict["pets"]:
+        if pet == None:
+            return is_pet_in_stock
+        elif pets_stock["name"] == pet["name"]:
+            is_pet_in_stock = True
+            break
+    
+    if is_pet_in_stock == True:
+        if customer_can_afford_pet(customer, pet):
+            add_pet_to_customer(customer, pet)
+            remove_pet_by_name(given_dict, pet["name"])
+            increase_pets_sold(given_dict, pets_sold)
+            remove_customer_cash(customer, pet["price"])
+            add_or_remove_cash(given_dict, pet["price"])

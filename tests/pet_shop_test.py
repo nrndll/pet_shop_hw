@@ -171,6 +171,7 @@ class TestPetShop(unittest.TestCase):
     # If one fails the entire test should fail
     #
     def test_sell_pet_to_customer__pet_found(self):
+        # pdb.set_trace()
         customer = self.customers[0]
         pet = find_pet_by_name(self.cc_pet_shop,"Arthur")
 
@@ -180,8 +181,7 @@ class TestPetShop(unittest.TestCase):
         self.assertEqual(1, get_pets_sold(self.cc_pet_shop))
         self.assertEqual(100, get_customer_cash(customer))
         self.assertEqual(1900, get_total_cash(self.cc_pet_shop))
-
-    @unittest.skip("delete this line to run the test")
+ 
     def test_sell_pet_to_customer__pet_not_found(self):
         customer = self.customers[0]
         pet = find_pet_by_name(self.cc_pet_shop,"Dave")
@@ -193,7 +193,6 @@ class TestPetShop(unittest.TestCase):
         self.assertEqual(1000, get_customer_cash(customer))
         self.assertEqual(1000, get_total_cash(self.cc_pet_shop))
 
-    @unittest.skip("delete this line to run the test")
     def test_sell_pet_to_customer__insufficient_funds(self):
         customer = self.customers[1]
         pet = find_pet_by_name(self.cc_pet_shop,"Arthur")
